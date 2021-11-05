@@ -1,0 +1,8 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+module.exports ={
+    semi: true,
+    trailingComma:'all',
+    singleQuote: true,
+    printWidth: 120,
+    tabWidth: 4,
+}
