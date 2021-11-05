@@ -1,6 +1,13 @@
 import React, { useState, useEffect, useCallback, useMemo, MouseEvent, MouseEventHandler, ChangeEvent } from 'react';
 import { PaginationDTO } from './paginationDTO';
-import { PaginationContainer, PaginationUL, PaginationLi, PaginationLink, SVGFeatherArrow } from './Paginnation.styled';
+import {
+    PaginationContainer,
+    PaginationUL,
+    PaginationLi,
+    PaginationLink,
+    SVGFeatherArrow,
+    PaginationInfo,
+} from './Paginnation.styled';
 
 const maxLength = 5;
 
@@ -62,7 +69,11 @@ const PaginationItem: React.FunctionComponent<PaginationItem> = ({ pages, curren
         <>
             {pageNumberValues
                 ? pageNumberValues.map((pageNumberValue: string, index: number) => (
-                      <PaginationLi key={pageNumberValue} isActive={currentPage === index} isDisable={isDisable}>
+                      <PaginationLi
+                          key={pageNumberValue}
+                          isActive={isNumber(pageNumberValue) && currentPage === parseInt(pageNumberValue) - 1}
+                          isDisable={isDisable}
+                      >
                           {isNumber(pageNumberValue) ? (
                               <PaginationLink href="#" data-role={pageNumberValue}>
                                   {pageNumberValue}
@@ -93,9 +104,9 @@ const Pagination: React.FunctionComponent<PaginationDTO> = ({
             if (isNumber(roleValue)) {
                 jumpAction(parseInt(roleValue, 10) - 1);
             } else {
-                if (roleValue === 'next' && currentPage > 0) {
+                if (roleValue === 'pre' && currentPage > 0) {
                     jumpAction(currentPage - 1);
-                } else if (roleValue === 'pre' && currentPage < pages - 1) {
+                } else if (roleValue === 'next' && currentPage < pages - 1) {
                     jumpAction(currentPage + 1);
                 }
             }
@@ -105,11 +116,12 @@ const Pagination: React.FunctionComponent<PaginationDTO> = ({
 
     return (
         <PaginationContainer>
+            <PaginationInfo>{`Showing page ${currentPage + 1} of ${pages}`}</PaginationInfo>
             <PaginationUL onClick={clickWasActioned}>
-                <PaginationLi isDisable={isDisable || currentPage === 1}>
-                    <PaginationLink href="#" data-role="next">
+                <PaginationLi isDisable={isDisable || currentPage === 0}>
+                    <PaginationLink href="#" data-role="pre">
                         <SVGFeatherArrow
-                            data-role="next"
+                            data-role="pre"
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
                             height="24"
@@ -127,10 +139,10 @@ const Pagination: React.FunctionComponent<PaginationDTO> = ({
                 </PaginationLi>
                 <PaginationItem pages={pages} currentPage={currentPage} isDisable={isDisable} />
                 <PaginationLi isDisable={isDisable || currentPage === pages - 1}>
-                    <PaginationLink href="#" data-role="pre">
+                    <PaginationLink href="#" data-role="next">
                         <SVGFeatherArrow
                             xmlns="http://www.w3.org/2000/svg"
-                            data-role="pre"
+                            data-role="next"
                             width="24"
                             height="24"
                             viewBox="0 0 24 24"

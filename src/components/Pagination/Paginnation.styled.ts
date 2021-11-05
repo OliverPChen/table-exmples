@@ -12,6 +12,7 @@ export const PaginationUL = styled.ul`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex:1;
 `
 interface LiProps {
     readonly isActive?: boolean;
@@ -33,12 +34,12 @@ export const PaginationLi = styled.li<LiProps>`
     display:block;
     width:33px;
     height:35px;
-    background:${props=>props.isDisable&&!props.isActive?"#f1f2f3":props.isActive?'#1b55e2':'rgba(0, 23, 55, 0.08)'} ;
+    background-color:${props=>props.isDisable&&!props.isActive?"#f1f2f3":props.isActive?'#1b55e2':'rgba(0, 23, 55, 0.08)'} ;
     border-color: ${props=>props.isDisable?'#dee2e6':''} ;;
     line-height: 35px;
     text-align: center;
     ${PaginationLink} {
-        color:${props=>props.isDisable&&!props.isActive?" #6c757d":props.isActive?'#fff':'#888ea8'} ;
+        color:${props=>props.isDisable&&!props.isActive?"#6c757d":props.isActive?'#fff':'#888ea8'} ;
         pointer-events:${props=>props.isDisable?"none":"all"} ;
         
     }
@@ -48,8 +49,17 @@ export const PaginationLi = styled.li<LiProps>`
     &:last-child {
         height:35px;
     }
-
 `
 
+export const PaginationInfo= styled.div`
+    white-space: normal;
+    color: #1b55e2;
+    font-weight: 600;
+    border: 1px solid #e0e6ed;
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+`
 
 

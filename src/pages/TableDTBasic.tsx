@@ -197,17 +197,15 @@ const TableDTBasic: React.FunctionComponent = (): JSX.Element => {
                             )}
                         </Row>
                         <Row>
-                            <Col />
                             <Col>
                                 <Pagination
                                     currentPage={dataConditions.pageNumber}
-                                    totalNumber={300}
+                                    totalNumber={totalNumber}
                                     pageSize={10}
-                                    isDisable={false}
+                                    isDisable={isLoading}
                                     jumpAction={jumpAction}
                                 />
                             </Col>
-                            <Col />
                         </Row>
                     </>
                 </MainContent>
