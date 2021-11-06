@@ -103,16 +103,6 @@ ul {
     list-style: none;
     margin: 0px;
 }
-.page-link {
-    margin-left: 5px !important;
-    border-radius: 50% !important;
-    text-align: center;
-}
-.page-item:first-child .page-link {
-    border-top-left-radius: 50% !important;
-    border-bottom-left-radius: 50% !important;
-}
-.page-item:last-child .page-link {
-    border-top-right-radius: 50% !important;
-    border-bottom-right-radius: 50% !important;
+.footer-wrapper {
+    height: 45px;
 }

@@ -69,13 +69,14 @@ const PaginationItem: React.FunctionComponent<PaginationItem> = ({ pages, curren
         <>
             {pageNumberValues
                 ? pageNumberValues.map((pageNumberValue: string, index: number) => (
-                      <PaginationLi
-                          key={pageNumberValue}
-                          isActive={isNumber(pageNumberValue) && currentPage === parseInt(pageNumberValue) - 1}
-                          isDisable={isDisable}
-                      >
+                      <PaginationLi key={pageNumberValue}>
                           {isNumber(pageNumberValue) ? (
-                              <PaginationLink href="#" data-role={pageNumberValue}>
+                              <PaginationLink
+                                  href="#"
+                                  isActive={isNumber(pageNumberValue) && currentPage === parseInt(pageNumberValue) - 1}
+                                  isDisable={isDisable}
+                                  data-role={pageNumberValue}
+                              >
                                   {pageNumberValue}
                               </PaginationLink>
                           ) : (
@@ -85,7 +86,7 @@ const PaginationItem: React.FunctionComponent<PaginationItem> = ({ pages, curren
                           )}
                       </PaginationLi>
                   ))
-                : ''}
+                : '……'}
         </>
     );
 };
@@ -118,8 +119,8 @@ const Pagination: React.FunctionComponent<PaginationDTO> = ({
         <PaginationContainer>
             <PaginationInfo>{`Showing page ${currentPage + 1} of ${pages}`}</PaginationInfo>
             <PaginationUL onClick={clickWasActioned}>
-                <PaginationLi isDisable={isDisable || currentPage === 0}>
-                    <PaginationLink href="#" data-role="pre">
+                <PaginationLi>
+                    <PaginationLink href="#" data-role="pre" isDisable={isDisable || currentPage === 0}>
                         <SVGFeatherArrow
                             data-role="pre"
                             xmlns="http://www.w3.org/2000/svg"
@@ -132,14 +133,14 @@ const Pagination: React.FunctionComponent<PaginationDTO> = ({
                             strokeLinecap="round"
                             strokeLinejoin="round"
                         >
-                            <line x1="19" y1="12" x2="5" y2="12"></line>
-                            <polyline points="12 19 5 12 12 5"></polyline>
+                            <line data-role="pre" x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline data-role="pre" points="12 19 5 12 12 5"></polyline>
                         </SVGFeatherArrow>
                     </PaginationLink>
                 </PaginationLi>
                 <PaginationItem pages={pages} currentPage={currentPage} isDisable={isDisable} />
-                <PaginationLi isDisable={isDisable || currentPage === pages - 1}>
-                    <PaginationLink href="#" data-role="next">
+                <PaginationLi>
+                    <PaginationLink href="#" data-role="next" isDisable={isDisable || currentPage === pages - 1}>
                         <SVGFeatherArrow
                             xmlns="http://www.w3.org/2000/svg"
                             data-role="next"
@@ -152,8 +153,8 @@ const Pagination: React.FunctionComponent<PaginationDTO> = ({
                             strokeLinecap="round"
                             strokeLinejoin="round"
                         >
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
+                            <line data-role="pre" x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline data-role="pre" points="12 5 19 12 12 19"></polyline>
                         </SVGFeatherArrow>
                     </PaginationLink>
                 </PaginationLi>
