@@ -28,7 +28,7 @@ module.exports = {
      hot:true,
      disableHostCheck: true,
      proxy:{
-       '/':{
+       '/houjin/*':{
          target:'https://company.aibank.jp',
          ws:false,
          changeOrigin:true,
