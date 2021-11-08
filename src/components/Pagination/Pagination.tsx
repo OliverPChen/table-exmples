@@ -140,7 +140,7 @@ const Pagination: React.FunctionComponent<PaginationDTO> = ({
                 </PaginationLi>
                 <PaginationItem pages={pages} currentPage={currentPage} isDisable={isDisable} />
                 <PaginationLi>
-                    <PaginationLink href="#" data-role="next" isDisable={isDisable || currentPage === pages - 1}>
+                    <PaginationLink href="#!" data-role="next" isDisable={isDisable || currentPage === pages - 1}>
                         <SVGFeatherArrow
                             xmlns="http://www.w3.org/2000/svg"
                             data-role="next"

@@ -39,8 +39,9 @@ function RowRender<T>({ columns, record, mainIndex, onRenderCell }: RowProps<T>)
 function TableData<T extends { id: string }>({ columns, tableData, onRenderCell }: TableDataDTO<T>) {
     return (
         <>
-            <Table responsive="mb-4 mt-4" hover>
-                {!!tableData ? (
+            {!!tableData ? (
+                <Table responsive="mb-4 mt-4" hover>
+                    (
                     <>
                         <thead>
                             <tr>
@@ -64,10 +65,11 @@ function TableData<T extends { id: string }>({ columns, tableData, onRenderCell 
                             ))}
                         </tbody>
                     </>
-                ) : (
-                    'No Data'
-                )}
-            </Table>
+                    )
+                </Table>
+            ) : (
+                'No Data'
+            )}
         </>
     );
 }

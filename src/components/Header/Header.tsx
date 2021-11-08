@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
 import Img90 from '../../assets/img/90x90.jpg';
-import Img120 from '../../assets/img/120x120.jpg';
-import Img175 from '../../assets/img/175x175.jpg';
-import Img200 from '../../assets/img/200x200.jpg';
-import Img255 from '../../assets/img/255x255.jpg';
-import Img300 from '../../assets/img/300x300.jpg';
 import caimg from '../../assets/img/ca.png';
 import deimg from '../../assets/img/de.png';
 import jpimg from '../../assets/img/jp.png';
@@ -15,7 +9,7 @@ const Header: React.FunctionComponent = (): JSX.Element => {
     return (
         <div className="header-container">
             <header className="header navbar navbar-expand-sm">
-                <a href="javascript:void(0);" className="sidebarCollapse" data-placement="bottom">
+                <a href="#" className="sidebarCollapse" data-placement="bottom">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -102,36 +96,16 @@ const Header: React.FunctionComponent = (): JSX.Element => {
                                 className="dropdown-menu dropdown-menu-right animated fadeInUp"
                                 aria-labelledby="customDropdown"
                             >
-                                <a
-                                    className="dropdown-item"
-                                    data-img-value="de"
-                                    data-value="de"
-                                    href="javascript:void(0);"
-                                >
+                                <a className="dropdown-item" data-img-value="de" data-value="de" href="#">
                                     <img src={deimg} className="flag-width" alt="flag" /> German
                                 </a>
-                                <a
-                                    className="dropdown-item"
-                                    data-img-value="jp"
-                                    data-value="jp"
-                                    href="javascript:void(0);"
-                                >
+                                <a className="dropdown-item" data-img-value="jp" data-value="jp" href="#">
                                     <img src={jpimg} className="flag-width" alt="flag" /> Japanese
                                 </a>
-                                <a
-                                    className="dropdown-item"
-                                    data-img-value="fr"
-                                    data-value="fr"
-                                    href="javascript:void(0);"
-                                >
+                                <a className="dropdown-item" data-img-value="fr" data-value="fr" href="#">
                                     <img src={frimg} className="flag-width" alt="flag" /> French
                                 </a>
-                                <a
-                                    className="dropdown-item"
-                                    data-img-value="ca"
-                                    data-value="en"
-                                    href="javascript:void(0);"
-                                >
+                                <a className="dropdown-item" data-img-value="ca" data-value="en" href="#">
                                     <img src={caimg} className="flag-width" alt="flag" /> English
                                 </a>
                             </div>
@@ -140,7 +114,7 @@ const Header: React.FunctionComponent = (): JSX.Element => {
 
                     <li className="nav-item dropdown message-dropdown">
                         <a
-                            href="javascript:void(0);"
+                            href="#"
                             className="nav-link dropdown-toggle"
                             id="messageDropdown"
                             data-toggle="dropdown"
@@ -225,7 +199,7 @@ const Header: React.FunctionComponent = (): JSX.Element => {
 
                     <li className="nav-item dropdown notification-dropdown">
                         <a
-                            href="javascript:void(0);"
+                            href="#"
                             className="nav-link dropdown-toggle"
                             id="notificationDropdown"
                             data-toggle="dropdown"
@@ -394,7 +368,7 @@ const Header: React.FunctionComponent = (): JSX.Element => {
 
                     <li className="nav-item dropdown user-profile-dropdown order-lg-0 order-1">
                         <a
-                            href="javascript:void(0);"
+                            href="#"
                             className="nav-link dropdown-toggle user"
                             id="user-profile-dropdown"
                             data-toggle="dropdown"
