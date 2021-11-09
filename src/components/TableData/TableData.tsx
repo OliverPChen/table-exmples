@@ -41,7 +41,6 @@ function TableData<T extends { id: string }>({ columns, tableData, onRenderCell 
         <>
             {!!tableData ? (
                 <Table responsive="mb-4 mt-4" hover>
-                    (
                     <>
                         <thead>
                             <tr>

@@ -30,6 +30,9 @@ export const PaginationLink = styled.a<LinkProps>`
    background-color:${props=>props.isDisable&&!props.isActive?"#f1f2f3":props.isActive?'#1b55e2':'rgba(0, 23, 55, 0.08)'} ;
    color:${props=>props.isDisable&&!props.isActive?"#6c757d":props.isActive?'#fff':'#888ea8'} ;
    pointer-events:${props=>props.isDisable?"none":"all"} ;
+   overflow: hidden;    
+   text-overflow:ellipsis;    
+   white-space: nowrap;
    &::hover{
      color:#1b55e2;
    }

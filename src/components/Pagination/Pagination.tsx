@@ -73,6 +73,7 @@ const PaginationItem: React.FunctionComponent<PaginationItem> = ({ pages, curren
                           {isNumber(pageNumberValue) ? (
                               <PaginationLink
                                   href="#"
+                                  title={pageNumberValue}
                                   isActive={isNumber(pageNumberValue) && currentPage === parseInt(pageNumberValue) - 1}
                                   isDisable={isDisable}
                                   data-role={pageNumberValue}
